@@ -25,7 +25,7 @@ const list = [
           <span class="bg-[#E4F00A] p-4"
             ><img src="/svg/question.svg" alt="" class="max-w-[20px]"
           /></span>
-          <p class="text-[20px] xl:text-[29px] p-4 text-left text-black">{{ value }}</p>
+          <p class="md:text-[20px] xl:text-[29px] p-4 text-left text-black">{{ value }}</p>
         </div>
       </div>
     </div>

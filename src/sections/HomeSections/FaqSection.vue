@@ -55,9 +55,9 @@ function toggle(idx) {
             class="w-full bg-black text-white cursor-pointer flex items-center justify-between"
             @click="toggle(idx)"
           >
-            <p class="md:text-[25px] text-left p-4">{{ item.question }}</p>
+            <p class="md:text-[25px] text-left px-4">{{ item.question }}</p>
             <span
-              class="ml-4 p-4 flex items-center justify-center bg-[#E4F00A]"
+              class="ml-4 p-6 flex items-center justify-center bg-[#E4F00A]"
             >
               <img
                 :class="
@@ -74,7 +74,7 @@ function toggle(idx) {
           <transition name="fade">
             <div
               v-if="openIdx === idx"
-              class="text-[20px] text-left mt-4 text-gray-700 font-normal bg-[#F4F4F4] p-4 rounded-b-lg"
+              class="md:text-[25px] text-left text-white font-normal bg-black p-4"
             >
               {{ item.answer }}
             </div>
