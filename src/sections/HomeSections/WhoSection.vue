@@ -21,27 +21,27 @@ const whyList = [
 
 <template>
   <section
-    class="max-w-7xl mx-auto py-20 flex flex-col items-center justify-center text-center font-Grotesque font-semibold text-white"
+    class="max-w-7xl mx-auto py-20 flex flex-col items-center justify-center text-center font-Grotesque font-semibold text-white px-4 xl:px-0"
   >
     <div class="">
-      <h1 class="text-[60px]">Who It’s For</h1>
+      <h1 class="title-text">Who It’s For</h1>
 
-      <div class="grid grid-cols-2 gap-x-12 gap-y-10 mt-16 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mt-10 md:mt-16 w-full">
         <div
           v-for="item in whyList"
           :key="item.title"
           class="flex items-center gap-4"
         >
           <img :src="item.img" alt="" class="w-16 h-16 object-cover" />
-          <p class="text-[30px] text-left">{{ item.title }}</p>
+          <p class="text-[20px] md:text-[30px] text-left">{{ item.title }}</p>
         </div>
       </div>
     </div>
 
     <div class="mt-24 w-full">
-        <h1 class="text-[60px]">Real Results</h1>
+        <h1 class="title-text">Real Results</h1>
 
-        <div class="grid grid-cols-3 gap-6 mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
             <div class="space-y-3">
                 <div class="w-full h-[100px] bg-slate-400"></div>
                 <p class="text-[20px]">I sent one proposal from this playbook and landed a $3,000 project the next day</p>

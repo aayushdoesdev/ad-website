@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from "vue";
-
 const faqList = [
   {
     question: "What exactly is the Proposal Playbook?",
@@ -36,9 +35,7 @@ const faqList = [
     answer: "Due to the digital nature, refunds are not offered.",
   },
 ];
-
 const openIdx = ref(null);
-
 function toggle(idx) {
   if (openIdx.value === idx) {
     openIdx.value = null;
@@ -50,38 +47,38 @@ function toggle(idx) {
 
 <template>
   <section class="bg-white font-Grotesque text-center font-semibold">
-    <div class="max-w-7xl mx-auto py-20">
-      <h1 class="text-[60px]">Frequently asked questions</h1>
-      <div class="mt-24 space-y-6">
-        <div v-for="(item, idx) in faqList" :key="idx" class="flex items-start">
+    <div class="max-w-7xl mx-auto py-20 px-4 xl:px-0">
+      <h1 class="title-text">Frequently asked questions</h1>
+      <div class="mt-10 md:mt-24 space-y-6">
+        <div v-for="(item, idx) in faqList" :key="idx" class="w-full">
           <div
-            class="w-full bg-black text-white p-4 cursor-pointer"
+            class="w-full bg-black text-white cursor-pointer flex items-center justify-between"
             @click="toggle(idx)"
           >
-            <p class="text-[25px] text-left">{{ item.question }}</p>
-            <transition name="fade">
-              <div
-                v-if="openIdx === idx"
-                class="text-[20px] text-left mt-4 text-gray-200 font-normal"
-              >
-                {{ item.answer }}
-              </div>
-            </transition>
+            <p class="md:text-[25px] text-left p-4">{{ item.question }}</p>
+            <span
+              class="ml-4 p-4 flex items-center justify-center bg-[#E4F00A]"
+            >
+              <img
+                :class="
+                  openIdx === idx
+                    ? 'rotate-45 transition-transform'
+                    : 'transition-transform'
+                "
+                src="/svg/plus.svg"
+                alt=""
+                class="w-[24px] h-[24px]"
+              />
+            </span>
           </div>
-          <div
-            class="px-4 py-5 bg-[#E4F00A] cursor-pointer"
-            @click="toggle(idx)"
-          >
-            <img
-              :class="
-                openIdx === idx
-                  ? 'rotate-45 transition-transform'
-                  : 'transition-transform'
-              "
-              src="/svg/plus.svg"
-              alt=""
-            />
-          </div>
+          <transition name="fade">
+            <div
+              v-if="openIdx === idx"
+              class="text-[20px] text-left mt-4 text-gray-700 font-normal bg-[#F4F4F4] p-4 rounded-b-lg"
+            >
+              {{ item.answer }}
+            </div>
+          </transition>
         </div>
       </div>
     </div>
